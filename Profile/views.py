@@ -42,7 +42,7 @@ def AdminLogin(request):
 
 
 def importdata(): 
-    balance_data = pd.read_csv('D:/Academic_Projects/Mini_Project/Project/code/Profile/dataset/dataset.txt')
+    balance_data = pd.read_csv('Profile/dataset/dataset.txt')
     balance_data = balance_data.abs()
     rows = balance_data.shape[0]  # gives number of row count
     cols = balance_data.shape[1]  # gives number of col count
@@ -65,10 +65,10 @@ def UserCheck(request):
         data = request.POST.get('t1', False)
         input = 'Account_Age,Gender,User_Age,Link_Desc,Status_Count,Friend_Count,Location,Location_IP\n';
         input += data+"\n"
-        f = open("D:/Academic_Projects/Mini_Project/Project/code/Profile/dataset/test.txt", "w")
+        f = open("Profile/dataset/test.txt", "w")
         f.write(input)
         f.close()
-        test = pd.read_csv('D:/Academic_Projects/Mini_Project/Project/code/Profile/dataset/test.txt')
+        test = pd.read_csv('Profile/dataset/test.txt')
         test = test.values[:, 0:8]
         # predict = model.predict_classes(test)
         predict = np.argmax(model.predict(test), axis=-1)
@@ -104,7 +104,7 @@ def GenerateModel(request):
 def ViewTrain(request):
     if request.method == 'GET':
         strdata = '<table border=1 align=center width=100%><tr><th><font size=4 color=white>Account Age</th><th><font size=4 color=white>Gender</th><th><font size=4 color=white>User Age</th><th><font size=4 color=white>Link Description</th> <th><font size=4 color=white>Status Count</th><th><font size=4 color=white>Friend Count</th><th><font size=4 color=white>Location</th><th><font size=4 color=white>Location IP</th><th><font size=4 color=white>Profile Status</th></tr><tr>'
-        data = pd.read_csv('D:/Academic_Projects/Mini_Project/Project/code/Profile/dataset/dataset.txt')
+        data = pd.read_csv('Profile/dataset/dataset.txt')
         rows = data.shape[0]  # gives number of row count
         cols = data.shape[1]  # gives number of col count
         for i in range(rows):

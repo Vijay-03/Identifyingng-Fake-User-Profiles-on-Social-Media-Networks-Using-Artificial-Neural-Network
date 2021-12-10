@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nbcywyzw0#(l#0@*v*6atz_n=@q1m6_@!#&u3-*sxe^d@l#!vl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-	        os.path.join('D:/Academic_Projects/Mini_Project/Project/code/Profile', 'templates'),
+	        os.path.join('Profile', 'templates'),
 	
 	],
         'APP_DIRS': True,
