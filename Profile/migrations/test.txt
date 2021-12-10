@@ -1,2 +1,0 @@
-Account_Age,Gender,User_Age,Link_Desc,Status_Count,Friend_Count,Location,Location_IP
-12,1,41,0,2754,218,0,0
