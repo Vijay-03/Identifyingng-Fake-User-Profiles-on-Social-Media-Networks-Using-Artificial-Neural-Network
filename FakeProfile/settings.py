@@ -25,7 +25,7 @@ SECRET_KEY = 'nbcywyzw0#(l#0@*v*6atz_n=@q1m6_@!#&u3-*sxe^d@l#!vl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["fake-profiles-identification-app.azurewebsites.net"]
 
 
 # Application definition
