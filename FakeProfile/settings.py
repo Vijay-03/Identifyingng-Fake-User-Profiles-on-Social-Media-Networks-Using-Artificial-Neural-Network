@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import whitenoise
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,12 +26,15 @@ SECRET_KEY = 'nbcywyzw0#(l#0@*v*6atz_n=@q1m6_@!#&u3-*sxe^d@l#!vl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["fake-profiles-identification-app.azurewebsites.net"]
+ALLOWED_HOSTS = ['127.0.0.1', "fake-profiles-identification-app.azurewebsites.net"]
+# Added
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    # Added
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +46,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # Added
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -121,4 +127,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = os.environ.get("Profile", '/static/')
+STATIC_URL = os.environ.get("Profile", '/static/')
+STATIC_ROOT = os.environ.get(BASE_DIR, './static/')
+# Added
+
+STATIC_STORAGE = ('whitenoise.stroage.CompressedManifestStaticFilesStorage')
+# Added
