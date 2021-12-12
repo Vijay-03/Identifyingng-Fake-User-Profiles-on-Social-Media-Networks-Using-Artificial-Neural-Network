@@ -132,5 +132,5 @@ STATIC_URL = os.environ.get("Profile", '/static/')
 STATIC_ROOT = os.environ.get(BASE_DIR, './static/')
 # Added
 
-STATIC_STORAGE = ('whitenoise.stroage.CompressedManifestStaticFilesStorage')
+# STATIC_STORAGE = ('whitenoise.stroage.CompressedManifestStaticFilesStorage')
 # Added
