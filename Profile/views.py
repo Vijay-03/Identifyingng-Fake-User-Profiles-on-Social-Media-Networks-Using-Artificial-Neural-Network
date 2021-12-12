@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.template import RequestContext
 from django.contrib import messages
 from django.http import HttpResponse
+import silence_tensorflow.auto
 import pandas as pd 
 import numpy as np
 from sklearn.model_selection import train_test_split

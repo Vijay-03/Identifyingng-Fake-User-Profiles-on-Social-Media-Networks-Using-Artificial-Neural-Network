@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nbcywyzw0#(l#0@*v*6atz_n=@q1m6_@!#&u3-*sxe^d@l#!vl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', "fake-profiles-identification-app.azurewebsites.net"]
 # Added
@@ -130,7 +130,8 @@ USE_TZ = True
 # STATIC_URL = os.environ.get("Profile", '/static/')
 STATIC_URL = os.environ.get("Profile", '/static/')
 STATIC_ROOT = os.environ.get(BASE_DIR, './static/')
+
 # Added
 
-STATIC_STORAGE = ('whitenoise.stroage.CompressedManifestStaticFilesStorage')
+# STATICFILES_STORAGE = ("whitenoise.stroage.CompressedManifestStaticFilesStorage")
 # Added
